@@ -1,3 +1,12 @@
+import { BrowserRouter, Route, Routes } from "react-router";
+import { SchedulePage } from "./pages/SchedulePage";
+
 export const App = () => {
-  return <p>Hello</p>;
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<SchedulePage />} />
+      </Routes>
+    </BrowserRouter>
+  );
 };
