@@ -24,6 +24,14 @@ const getDayFilterOptions = () => {
   });
 };
 
+const getStartHour = (dateFilterValue: Date) => {
+  const date = new Date();
+  if (isToday(dateFilterValue)) {
+    return date.getHours();
+  }
+  return EVENT_START_HOUR;
+};
+
 const getTimeFilterOptions = (dateFilterValue: Date) => {
   const date = new Date();
   let startHour = EVENT_START_HOUR;
@@ -61,7 +69,9 @@ export const EventFilters: FC<IEventFiltersProps> = ({
       <select
         name="days"
         onChange={(event) => {
-          onDateFilterValueChange(new Date(event.target.value));
+          const newDate = new Date(event.target.value);
+          newDate.setHours(getStartHour(newDate));
+          onDateFilterValueChange(newDate);
         }}
       >
         {getDayFilterOptions().map((day) => {
