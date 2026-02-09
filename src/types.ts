@@ -45,10 +45,8 @@ export type Production = {
     spokenLanguages?: string[];
   };
   localizableAttributes: {
-    [locale: string]: {
-      description?: string;
-      shortDescription?: string;
-    };
+    description?: string;
+    shortDescription?: string;
   };
   assets: {
     cover: Asset | null;

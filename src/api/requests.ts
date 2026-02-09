@@ -16,3 +16,15 @@ export const getAllEvents = async (
     console.error(error);
   }
 };
+
+export const getEvent = async (id: string) => {
+  try {
+    const data = await fetch(
+      `${BASE_API_URL}/events/${id}?embed[production]=true&embed[venue]=true`
+    );
+    const json: Event = await data.json();
+    return json;
+  } catch (error) {
+    console.error(error);
+  }
+};
