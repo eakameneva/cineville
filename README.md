@@ -4,7 +4,7 @@ A cinema scheduling application built with React and TypeScript. This project di
 
 ## Deployment
 
-_Link_
+[https://eakameneva.github.io/cineville/](https://eakameneva.github.io/cineville/)
 
 ## Features
 
