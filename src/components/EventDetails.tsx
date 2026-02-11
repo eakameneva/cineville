@@ -40,7 +40,7 @@ export const EventDetails: FC<IEventDetailsProps> = ({ event }) => {
               {format(startDate, "d MMMM")} {format(startDate, "HH:mm")}
             </p>
 
-            {production.attributes.duration && (
+            {!!production.attributes.duration && (
               <p>
                 <span className="font-semibold">Duration:</span>{" "}
                 {production.attributes.duration} minutes
@@ -74,7 +74,7 @@ export const EventDetails: FC<IEventDetailsProps> = ({ event }) => {
               </p>
             )}
 
-            {production.attributes.releaseYear && (
+            {!!production.attributes.releaseYear && (
               <p>
                 <span className="font-semibold">Release year:</span>{" "}
                 {production.attributes.releaseYear}
