@@ -4,7 +4,7 @@ import { EventDetailsPage } from "./pages/EventDetailsPage";
 
 export const App = () => {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/cineville">
       <Routes>
         <Route path="/" element={<SchedulePage />} />
         <Route path="/details/:eventId" element={<EventDetailsPage />} />
