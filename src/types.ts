@@ -99,8 +99,3 @@ export type Asset = {
 export type ApiPath = {
   href: string;
 };
-
-export interface IEventFilters {
-  date: Date;
-  hour: number;
-}

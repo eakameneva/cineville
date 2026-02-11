@@ -14,6 +14,7 @@ export const EventDetailsPage = () => {
   } = useQuery({
     queryKey: ["events", eventId],
     queryFn: () => getEvent(eventId),
+    enabled: !!eventId,
   });
 
   if (isLoading) {
