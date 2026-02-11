@@ -1,6 +1,5 @@
-import { format, isToday } from "date-fns";
-
 import type { ChangeEvent, FC } from "react";
+import { format, isToday } from "date-fns";
 
 const DAY_OPTION_AMOUNT = 7;
 const FULL_DAY_HOURS = 24;
@@ -112,7 +111,7 @@ export const EventFilters: FC<IEventFiltersProps> = ({
   };
 
   return (
-    <div className="flex gap-4 sticky top-0 bg-[#fffbf4] py-4 px-6 z-10">
+    <div className="flex gap-4 sticky top-0 bg-[#fffbf4] py-4 px-6 z-10 max-w-4xl mx-auto w-full">
       <select
         name="days"
         value={format(dateFilterValue, "yyyy-MM-dd")}
@@ -127,6 +126,7 @@ export const EventFilters: FC<IEventFiltersProps> = ({
           );
         })}
       </select>
+
       <select
         name="time"
         value={dateFilterValue.getHours()}

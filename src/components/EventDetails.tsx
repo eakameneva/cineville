@@ -8,6 +8,7 @@ import { Link } from "react-router";
 interface IEventDetailsProps {
   event: Event;
 }
+
 export const EventDetails: FC<IEventDetailsProps> = ({ event }) => {
   const { production, venue } = event._embedded;
   const { startDate, attributes } = event;
@@ -23,14 +24,16 @@ export const EventDetails: FC<IEventDetailsProps> = ({ event }) => {
       </Link>
 
       <h1 className="text-3xl font-bold text-gray-900 mb-6">Show details</h1>
+
       <div className="bg-white rounded-lg shadow-lg p-6">
         <img
-          className="w-full max-w-2xl aspect-video object-cover rounded-lg mb-6"
+          className="w-full max-w-2xl aspect-video object-cover mb-6 mx-auto"
           src={assets?.cover?.url || placeholderPoster}
           alt={`${title} poster`}
         />
 
         <h2 className="text-2xl font-bold text-gray-900 mb-4">{title}</h2>
+
         <div className="space-y-3 text-gray-700">
           <p>
             {format(startDate, "d MMMM")} {format(startDate, "HH:mm")}
