@@ -8,7 +8,7 @@ interface IEventListProps {
 
 export const EventList: FC<IEventListProps> = ({ events }) => {
   return (
-    <ul className="px-6 space-y-4 max-w-4xl mx-auto">
+    <ul className="px-6 max-w-4xl mx-auto flex flex-col gap-4">
       {events.map((event) => {
         return <EventListItem key={event.id} event={event} />;
       })}
