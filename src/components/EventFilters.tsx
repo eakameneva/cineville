@@ -88,7 +88,7 @@ export const EventFilters: FC<IEventFiltersProps> = ({
   const handleFilterChange = (date: Date, hours: number) => {
     const newDate = new Date(date);
 
-    newDate.setHours(hours);
+    newDate.setHours(hours, 0, 0, 0);
 
     if (getIsCurrentHourSelected(newDate)) {
       onDateFilterValueChange(new Date());
