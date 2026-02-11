@@ -1,73 +1,63 @@
-# React + TypeScript + Vite
+# Cinema App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A cinema scheduling application built with React and TypeScript. This project displays upcoming movie screenings in the Netherlands from the Cineville API with filtering, searching, and detailed event information.
 
-Currently, two official plugins are available:
+## Deployment
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+_Link_
 
-## React Compiler
+## Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- Display a list of film screenings from today up to 7 days ahead with date and time filtering
+- Search for a screening by film title
+- Each screening has a page showing detailed information
+- Responsive design using Tailwind CSS
+- Error handling with user-friendly feedback
+- Cross-browser support ensures compatibility across major modern browsers
 
-## Expanding the ESLint configuration
+## Tech Stack
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- **React**
+- **TypeScript**
+- **Vite**
+- **React Query**
+- **React Router**
+- **Tailwind CSS**
+- **date-fns**
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## API
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+This application uses the [Cineville Schedule Service API](https://api.cineville.nl) to fetch events and venue information.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+### API Endpoints Used
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+- `GET /events` - Fetch events with date/time filters
+- `GET /events/:id` - Fetch single event details
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## AI Usage
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+AI was used during the implementation of this task for writing formatLanguages function, for placeholder poster generation and for refactoring suggestions (for example, toSorted non-mutating method instead of sort)
+
+## Installation and setup
+
+Follow these steps to set up and run the project locally:
+
+1. **Clone the repository:**
+
+   ```sh
+   git clone https://github.com/eakameneva/cineville.git
+   ```
+
+2. **Install dependencies:**
+
+   ```sh
+   npm install
+   ```
+
+3. **Start the development server:**
+
+   ```sh
+   npm run dev
+   ```
+
+4. The app will be available at **[http://localhost:5173](http://localhost:5173)**.
