@@ -84,7 +84,7 @@ export const EventDetails: FC<IEventDetailsProps> = ({ event }) => {
 
           {venue && (
             <div className="pt-4 border-t border-gray-200 flex flex-col gap-2">
-              <p className="font-semibold text-lg">Cinema</p>
+              <h3 className="font-semibold text-lg">Cinema</h3>
               <p>{venue.name}</p>
               <p className="text-gray-600">
                 {venue.address.street} {venue.address.houseNumber},{" "}
@@ -95,7 +95,7 @@ export const EventDetails: FC<IEventDetailsProps> = ({ event }) => {
 
           {!!localizableAttributes?.description && (
             <div className=" pt-4 border-t border-gray-200 flex flex-col gap-2">
-              <p className="font-semibold text-lg">Description</p>
+              <h3 className="font-semibold text-lg">Description</h3>
               <p className="text-gray-600">
                 {localizableAttributes.description}
               </p>

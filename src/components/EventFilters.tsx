@@ -44,7 +44,7 @@ const getStartHour = (dateFilterValue: Date) => {
 const getTimeOptionTitle = (
   index: number,
   dateFilterValue: Date,
-  hours: number
+  hours: number,
 ) => {
   if (index === 0 && isToday(dateFilterValue)) {
     return "NOW";
@@ -105,9 +105,7 @@ export const EventFilters: FC<IEventFiltersProps> = ({
   };
 
   const handleTimeFilterChange = (event: ChangeEvent<HTMLSelectElement>) => {
-    const dateWithNewTime = new Date(dateFilterValue);
-
-    handleFilterChange(dateWithNewTime, +event.target.value);
+    handleFilterChange(dateFilterValue, +event.target.value);
   };
 
   return (

@@ -22,19 +22,19 @@ const transformEvents = (events: Event[]): Event[] => {
 };
 
 const filterEventsBySearch = (value: string, events: Event[]) => {
-  if (!value.trim()) return events;
+  if (!value) return events;
 
   return events.filter((event) => {
     return event._embedded.production?.title
       .toLowerCase()
-      .includes(value.toLowerCase());
+      .includes(value.toLowerCase().trim());
   });
 };
 
 export const SchedulePage = () => {
   const [dateFilterValue, setDateFilterValue] = useState(new Date());
   const [filteredEventsBySearch, setFilteredEventsBySearch] = useState<Event[]>(
-    []
+    [],
   );
   const [searchValue, setSearchValue] = useState("");
 
